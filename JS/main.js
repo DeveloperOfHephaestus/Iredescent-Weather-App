@@ -36,7 +36,7 @@ async function FetchData(latitude,longitude){
 text.innerText="Fetching Hourly Data...";
 
     //this is url for getting current weather data
-    const URL=`http://api.weatherapi.com/v1/forecast.json?key=
+    const URL=`https://api.weatherapi.com/v1/forecast.json?key=
     ${APIkey}
     &q=${
         latitude
