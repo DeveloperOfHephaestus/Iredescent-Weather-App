@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i');
+body{
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    font-family: Roboto;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow-x:hidden;
+    
+    
+}
+header{
+    display: flex;
+    align-content: space-around;
+    align-items: center;
+    justify-content: space-around;
+    gap: 5%;
+    background:linear-gradient(30deg ,rgba(21, 17, 46, 0.541),rgb(29, 22, 78),rgb(1, 1, 17));
+    width: 100%;
+    color:rgb(252, 248, 248);
+   
+    box-shadow: 0px 0px 5px 3px black;
+   
+}
+header button{
+    background: rgb(2, 3, 7);
+    border: 2px solid dodgerblue;
+    color: aliceblue;
+   font-size: 1rem;
+   border-radius: 0.5rem;
+   padding: 1%;
+   cursor: pointer;
+   transition: 0.3s linear all;
+}
+header button:hover{
+    background: linear-gradient(30deg ,darkblue 70% ,yellow 30%);
+  box-shadow: 0px 0px 1rem 0.5rem darkblue;
+    
+}
+main{
+    display: grid;
+    grid-template-columns: 30% 60% ;
+    gap: 5%;
+    padding: 2%;
+    overflow: hidden;
+    justify-content: space-around;
+    width: 100%;
+     
+ 
+  
+    
+}
+
+.main::before{
+    visibility:hidden;
+}
+main::before{
+    z-index: 3;
+    position: absolute;
+    background-image:url("../assets/AppLogo.jpg") ;
+    background-repeat: no-repeat;
+    background-size: 50% 50%;
+    background-position:calc(50%) calc(25%);
+    background-color: black;
+    color: aliceblue;
+    content:attr(data-);
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    font-size: 1.5rem;
+  
+}
+
+.content{
+    overflow-y: scroll;
+    background:linear-gradient(rgba(7, 4, 21, 0.516),rgba(0, 0, 0, 0.215) 50%);
+    text-align: center;
+  
+    color: aliceblue;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: start;
+
+   
+
+}
+::-webkit-scrollbar{appearance: none;}
+::-webkit-scrollbar-track{
+    background: linear-gradient(45deg,rgb(0, 0, 0),black);
+}
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(45deg,rgb(16, 44, 72),rgb(36, 1, 232),transparent);
+}
+.space{width: 100%;}
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    background:linear-gradient(30deg ,rgb(21, 17, 46),rgb(4, 3, 10),rgb(1, 1, 17));
+    width: 100%;
+    color: aliceblue;
+}
+.data{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 1% 1%;
+    overflow:hidden;
+    justify-items: center;
+    align-content: stretch;
+   overflow-y: scroll;
+    padding: 1%;
+    @media screen and (min-width:850px) {
+        grid-template-columns: auto auto auto ;
+    }
+   
+   
+}
+.ForecastDiv{
+    background:transparent;
+    color: rgb(216, 255, 250);
+    border: 2px solid #0e85f4;
+    padding: 1%;
+   box-shadow: inset 0px 0px 1rem 0.3rem black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    scroll-behavior: smooth;
+  
+  transition: 0.3s linear all;
+  width: 50%;
+
+  @media screen and (max-width:770px) {
+    width: 90%;
+  }
+  @media screen and (min-width:850px) {
+    width: 95%;
+ 
+  
+}
+  
+.ForecastDiv img{
+    border: 2px solid yellow;
+}
+}
+@keyframes showIn {
+    from{transform: translate(-50%,0);}
+    
+}
+.ForecastDiv:hover{
+   
+   transform: scale(1.1,1.1);
+   background: linear-gradient(30deg,darkblue 70% ,yellow 10%);
+   border: 2px transparent;
+   
+
+}
+.Scene{
+    position: absolute;
+    z-index:-1;
+}
+
+@media screen and (max-width:600px) {
+    header p{display: none;
+
+    }
+    .main{
+        display: flex;
+        flex-direction: column;
+    }
+    .space{
+        height: 50vh;
+        width: 100%;
+    }
+    .data{display: flex;
+        overflow-y: hidden;
+        overflow-x: scroll;
+    }
+    .ForecastDiv{
+      
+        display: flex;
+        flex-direction: row;
+        scroll-behavior: smooth;
+        background: linear-gradient(30deg, darkblue 90% ,yellow 10%);
+    }
+    
+}
+
+.AboutNotShown{
+    display: none;
+}
+.About{
+    position: absolute;
+    color: aliceblue;
+    height: 50%;
+    width: 50%;
+    align-self: center;
+    background: linear-gradient(30deg,rgb(3, 3, 26) 90%,yellow);
+    border: 2px solid yellow;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    left: 25%;
+    justify-items: center;
+    align-content: center;
+    text-align: center;
+    border-radius: 1rem;
+    padding: 1%;
+    transition: 0.3s linear all;
+    animation: ShowAbout 0.3s linear 1;
+}
+@keyframes ShowAbout {
+    from{transform: scale(0,0);background: transparent;}
+}
+.About button{
+    background: black;
+    color: aliceblue;
+    border: 2px solid yellow;
+    padding: 2% 5%;
+    border-radius: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s linear all;
+}
+.About button:hover{
+    background: darkblue;
+    color: aliceblue;
+}
